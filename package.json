@@ -1,0 +1,14 @@
+{
+  "name": "nocode-showcase",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite site",
+    "build": "vite build --config vite.config.js",
+    "preview": "vite preview --config vite.config.js"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

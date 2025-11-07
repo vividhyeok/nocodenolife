@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>No Code No Life – Game Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css?v=20251108" />
+  </head>
+  <body class="theme-dark">
+    <header class="navbar container">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="logo" class="logo" />
+        <span class="brand-name">No Code No Life</span>
+      </div>
+      <nav class="nav">
+        <a href="#gallery">Games</a>
+        <a href="#about">About</a>
+        <button id="theme-toggle" class="btn btn-ghost small" type="button" title="테마 전환">🌗</button>
+      </nav>
+    </header>
+
+    <section class="hero container">
+      <div class="hero-text">
+        <h1 class="display">Play • Build • Share</h1>
+        <p class="subtitle">팀 프로젝트를 한 데 모은 하이퍼 심플·하이퀄리티 게임 갤러리</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"></div>
+    </section>
+
+    <main class="container">
+      <section id="filters" class="filters">
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="Scratch">Scratch</button>
+        <button class="chip" data-filter="RenPy">Ren'Py</button>
+        <button class="chip" data-filter="zip">Downloads</button>
+        <button class="chip" data-filter="video">Video</button>
+      </section>
+
+      <section id="gallery" class="grid" data-state="loading"></section>
+    </main>
+
+    <template id="card-tpl">
+      <article class="card" data-id="">
+        <div class="card-media">
+          <img class="thumb" alt="thumbnail" />
+          <div class="media-overlay">
+            <button class="btn btn-glow action-primary">바로보기</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3 class="title"></h3>
+            <span class="badge"></span>
+          </div>
+          <p class="meta"></p>
+          <p class="desc"></p>
+          <div class="actions"></div>
+        </div>
+      </article>
+    </template>
+
+    <div id="modal" class="modal" hidden style="display:none" aria-hidden="true" data-init="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-dialog">
+        <header class="modal-header">
+          <h4 id="modal-title">Preview</h4>
+          <button class="icon-btn" title="닫기" data-close>&times;</button>
+        </header>
+        <div class="modal-body">
+          <iframe id="modal-frame" title="preview" loading="lazy" hidden></iframe>
+          <video id="modal-video" class="video" controls playsinline preload="metadata" hidden style="width:100%; min-height:60vh; border:1px solid #273544; border-radius:12px; background:#111"></video>
+          <div id="modal-download" class="download-only" hidden>
+            <p>이 프로젝트는 ZIP 다운로드로 제공됩니다.</p>
+            <a id="modal-download-link" class="btn btn-primary" href="#" download style="margin-top:1rem; display:inline-block">ZIP 받기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="team-modal" class="modal" hidden style="display:none" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-dialog">
+        <header class="modal-header">
+          <h4 id="team-modal-title">Team Details</h4>
+          <button class="icon-btn" title="닫기" data-close>&times;</button>
+        </header>
+        <div class="modal-body">
+          <div id="team-modal-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about" class="about container">
+      <h2>About</h2>
+      <p>고교 연계 동아리 '노코드노라이프'의 포트폴리오용 웹사이트입니다.</p>
+    </section>
+
+    <footer class="footer container">
+      <small>© 2025 No Code No Life • Static showcase</small>
+    </footer>
+
+    <script src="assets/app.js?v=20251108" defer></script>
+  </body>
+</html>
