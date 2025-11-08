@@ -1,11 +1,11 @@
 [
   {
     "id": "team-a",
-    "title": "선택지 스토리 게임",
+  "title": "무제",
     "team": "A팀",
     "tech": "RenPy",
     "type": "html",
-    "url": "games/team-a_story.html",
+  "url": "games/team-a/index.html",
   "detailUrl": "teams/team-a.html",
     "desc": "Ren'Py 기반 선택지 진행 스토리 어드벤처",
     "thumb": "assets/teama.png",
@@ -13,7 +13,7 @@
   },
   {
     "id": "team-b",
-    "title": "탈출 월드 시연",
+  "title": "HTVM",
     "team": "B팀",
     "tech": "Minecraft",
     "type": "minecraft",
