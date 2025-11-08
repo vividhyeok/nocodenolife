@@ -31,5 +31,16 @@
     "desc": "2인 로컬 대전: 이동(A,D / ←,→) 공격(F / 1) 체력 100 · 5데미지 · 20회 피격 패배",
     "thumb": "assets/teamc.png",
     "details": "# team c\n스크래치를 활용한 게임\nhttps://scratch.mit.edu/projects/1227685278/\n플레이어는 각각 캐릭터를 조작해 상대의 체력을 0으로 만드는 것이 목표입니다.\n이동은 A, D(플레이어 1) / ←, →(플레이어 2) 키로 수행하며,\n공격은 F(플레이어 1) / 1(플레이어 2) 키로 가능합니다.\n\n기본 체력은 100, 공격 한 번에 5의 피해를 입으며\n20회 피격 시 패배합니다.\n간결한 조작과 직관적인 전투로 구성된 로컬 대전형 게임입니다."
+  },
+  {
+    "id": "demo-flappy",
+    "title": "Flappy Square 데모",
+    "team": "Demo",
+    "tech": "Canvas",
+    "type": "html",
+    "url": "games/flappy.html",
+    "desc": "Vanilla JS + Canvas 로 구현된 간단한 플래피 스타일 회피 게임",
+    "thumb": "assets/thumb-default.svg",
+    "details": "space 키로 점프, 파이프 충돌 시 Game Over. 점수는 시간 기반 증가. 코드 전체 단일 HTML으로 정적 배포 호환." 
   }
 ]

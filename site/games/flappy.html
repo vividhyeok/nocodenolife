@@ -1,0 +1,10 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Flappy Square</title><style>html,body{margin:0;height:100%;background:#0d1016;color:#e5e9f0;font-family:system-ui}canvas{display:block;margin:0 auto;background:linear-gradient(#87CEEB,#e0f3ff)}</style></head><body><canvas id="c" width="480" height="720"></canvas><script>const cv=document.getElementById('c'),g=cv.getContext('2d');let t=0, y=300, vy=0, pipes=[], score=0, over=false;const G=0.4, J=-8, GAP=160, SPD=2;function addPipe(){const h=100+Math.random()*300;pipes.push({x:cv.width,y:h});}for(let i=0;i<4;i++){pipes.push({x:cv.width+i*200,y:100+Math.random()*300});}function step(){t++; vy+=G; y+=vy; if(y<0) y=0; if(y>cv.height) over=true; g.clearRect(0,0,cv.width,cv.height); // bird
+ g.fillStyle='#ffeb3b'; g.fillRect(120,y,28,28); // pipes
+ g.fillStyle='#4caf50'; for(const p of pipes){p.x-=SPD; g.fillRect(p.x,0,60,p.y); g.fillRect(p.x,p.y+GAP,60,cv.height-p.y-GAP);} if(pipes.length && pipes[0].x<-60){pipes.shift(); addPipe();}
+ // collision
+ for(const p of pipes){ if(120< p.x+60 && 120+28>p.x){ if(y< p.y || y+28> p.y+GAP) over=true; } }
+ // score
+ if(t%60===0) score++; g.fillStyle='#0d1016'; g.font='bold 24px system-ui'; g.fillText('SCORE '+score, 10, 30);
+ if(over){ g.fillStyle='rgba(0,0,0,.5)'; g.fillRect(0,0,cv.width,cv.height); g.fillStyle='#fff'; g.textAlign='center'; g.font='bold 28px system-ui'; g.fillText('Game Over', cv.width/2, cv.height/2); g.font='14px system-ui'; g.fillText('Press R to Restart', cv.width/2, cv.height/2+28); return; }
+ requestAnimationFrame(step);}
+ window.addEventListener('keydown',e=>{ if(e.code==='Space'){ vy=J; } if(e.key.toLowerCase()==='r'){ location.reload(); } }); step();</script></body></html>
