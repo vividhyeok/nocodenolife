@@ -28,7 +28,10 @@ npm run dev
 npm run build
 npm run preview
 ```
-`dist/` 폴더 생성 → 정적 산출물.
+`site/dist/` 폴더 생성 → 정적 산출물.
+
+빌드 후 추가 복사:
+`scripts/copy-static.js` 가 `projects.json`, `assets/` (이미지), `games/` 폴더를 dist 로 복사합니다. (Vite 가 동적 fetch 대상은 자동 수집하지 않기 때문)
 
 ## 게임 자산 추가 방법
 1. HTML 실행형: `/site/games/your_game.html` 로 단일 HTML 배치 → `projects.json` `type: "html"` 로 등록.
@@ -45,7 +48,7 @@ node scripts/validate-projects.js
 ## Vercel 배포
 1. GitHub 에 `nocodenolife/` 폴더를 루트로 push (또는 저장소 자체로 사용)
 2. Vercel 대시보드에서 Import → build command 자동(`npm run build`)
-3. outputDirectory 는 `dist` (vercel.json 정의)
+3. outputDirectory 는 `site/dist` (vercel.json 정의; 프로젝트 루트는 저장소 루트)
 4. 배포 후 CDN 경로에서 `projects.json` 캐시가 길게 유지될 수 있으니 변경 시 재배포.
 
 ## projects.json 항목 규칙

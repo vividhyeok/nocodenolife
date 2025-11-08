@@ -1,5 +1,5 @@
 async function fetchProjects(){
-  const res = await fetch('projects.json');
+  const res = await fetch('./projects.json');
   if(!res.ok) throw new Error('projects.json 로드 실패');
   return res.json();
 }

@@ -1,7 +1,6 @@
 {
-  "root": "site",
   "buildCommand": "npm run build",
-  "outputDirectory": "../dist",
+  "outputDirectory": "site/dist",
   "framework": null,
   "installCommand": "npm install",
   "devCommand": "npm run dev"
