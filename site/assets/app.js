@@ -55,6 +55,15 @@ function renderCards(items){
     // also click on image opens
     img.addEventListener('click', (e)=>{ e.preventDefault(); openModal(p); });
 
+    // play button in actions
+    const playBtn = document.createElement('button');
+    playBtn.className = 'btn btn-primary';
+    playBtn.textContent = (p.type==='video' || p.type==='minecraft') ? '영상 재생' : (p.type==='zip' ? '다운로드' : '바로 보기');
+    playBtn.addEventListener('click', (e)=>{
+      e.preventDefault(); openModal(p);
+    });
+    actions.appendChild(playBtn);
+
     // team details button
     const detailsBtn = document.createElement('button');
     detailsBtn.className = 'btn btn-secondary';
