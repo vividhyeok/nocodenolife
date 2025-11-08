@@ -67,9 +67,10 @@ function renderCards(items){
 
     // team details button
     const detailsBtn = document.createElement('button');
+    detailsBtn.type = 'button';
     detailsBtn.className = 'btn btn-secondary';
     detailsBtn.textContent = '팀 활동 상세';
-    detailsBtn.addEventListener('click', (e) => { e.preventDefault(); openTeamModal(p); });
+    detailsBtn.addEventListener('click', (e) => { e.preventDefault(); navigateToDetail(p); });
     actions.appendChild(detailsBtn);
 
     grid.appendChild(node);
@@ -111,6 +112,26 @@ function navigateToProject(p){
     window.open(p.url, '_blank', 'noopener');
   } else {
     window.location.href = p.url;
+  }
+}
+
+function navigateToDetail(p){
+  if(!p) return;
+  const target = p.detailUrl || p.details;
+  if(!target){
+    openTeamModal(p);
+    return;
+  }
+  const isExternal = typeof target === 'string' && /^https?:\/\//i.test(target);
+  const href = typeof target === 'string' ? target : '';
+  if(!href){
+    openTeamModal(p);
+    return;
+  }
+  if(isExternal){
+    window.open(href, '_blank', 'noopener');
+  } else {
+    window.location.href = href;
   }
 }
 
