@@ -50,17 +50,18 @@ function renderCards(items){
     const overlayBtn = node.querySelector('.action-primary');
     overlayBtn.textContent = (p.type==='video' || p.type==='minecraft') ? '영상 재생' : (p.type==='zip' ? '다운로드' : '바로 보기');
     overlayBtn.addEventListener('click', (e)=>{
-      e.preventDefault(); openModal(p);
+      e.preventDefault(); navigateToProject(p);
     });
     // also click on image opens
-    img.addEventListener('click', (e)=>{ e.preventDefault(); openModal(p); });
+    img.addEventListener('click', (e)=>{ e.preventDefault(); navigateToProject(p); });
 
     // play button in actions
     const playBtn = document.createElement('button');
     playBtn.className = 'btn btn-primary';
     playBtn.textContent = (p.type==='video' || p.type==='minecraft') ? '영상 재생' : (p.type==='zip' ? '다운로드' : '바로 보기');
+    playBtn.type = 'button';
     playBtn.addEventListener('click', (e)=>{
-      e.preventDefault(); openModal(p);
+      e.preventDefault(); navigateToProject(p);
     });
     actions.appendChild(playBtn);
 
@@ -91,6 +92,26 @@ function wireFilters(all){
       document.getElementById('gallery').scrollIntoView({behavior:'smooth'});
     });
   });
+}
+
+function navigateToProject(p){
+  if(!p || !p.url) return;
+  if(p.type === 'zip'){
+    const link = document.createElement('a');
+    link.href = p.url;
+    const filename = p.url.split('?')[0].split('/').pop() || 'download.zip';
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    return;
+  }
+  const isExternal = /^https?:\/\//i.test(p.url);
+  if(isExternal){
+    window.open(p.url, '_blank', 'noopener');
+  } else {
+    window.location.href = p.url;
+  }
 }
 
 function openModal(p){

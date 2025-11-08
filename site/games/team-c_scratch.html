@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Team C · 로컬 대전 스크래치</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background: radial-gradient(circle at 20% 20%, rgba(79, 195, 247, .35), transparent 45%), radial-gradient(circle at 80% 30%, rgba(255, 126, 179, .35), transparent 60%), linear-gradient(150deg, #0c1118, #172131); color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 2.5rem 1rem 3rem; }
+      header { text-align: center; margin-bottom: 1.5rem; }
+      h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin-bottom: .5rem; letter-spacing: .02em; }
+      p { opacity: .85; max-width: 720px; line-height: 1.6; margin: 0 auto; }
+      .stage { width: min(1024px, 100%); border-radius: 18px; border: 1px solid rgba(79, 195, 247, .45); box-shadow: 0 24px 48px -28px rgba(6, 11, 17, .95); overflow: hidden; background: rgba(12, 18, 26, .9); padding: 1.5rem; }
+      iframe { display: block; width: 100%; aspect-ratio: 4 / 3; border: none; border-radius: 12px; background: #000; }
+      .actions { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+      a.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.4rem; border-radius: 999px; font-weight: 600; font-size: .9rem; border: 1px solid #4fc3f7; color: #0c1118; background: linear-gradient(135deg, #4fc3f7, #b280ff); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+      a.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -18px rgba(79, 195, 247, .9); }
+      footer { margin-top: auto; padding-top: 2.5rem; font-size: .75rem; opacity: .6; text-align: center; }
+      @media (max-width: 640px) { .stage { padding: 1rem; } iframe { aspect-ratio: 3 / 4; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Team C · 로컬 대전 스크래치</h1>
+      <p>두 명이 로컬에서 맞붙는 대전형 게임입니다. 플레이어 1은 A/D/F, 플레이어 2는 ←/→/1 키를 사용해 상대 체력을 0으로 만들면 승리합니다.</p>
+    </header>
+    <main class="stage">
+      <iframe src="https://scratch.mit.edu/projects/1227685278/embed" allowfullscreen></iframe>
+      <div class="actions">
+        <a class="btn" href="../index.html">🏠 갤러리로 돌아가기</a>
+        <a class="btn" href="https://scratch.mit.edu/projects/1227685278/" target="_blank" rel="noopener">🌐 스크래치 원본 열기</a>
+      </div>
+    </main>
+    <footer>© 2025 Team C</footer>
+  </body>
+</html>

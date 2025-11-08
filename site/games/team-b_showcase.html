@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Team B · 탈출 월드 시연</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background: radial-gradient(circle at top left, #243040, #0c1118 60%); color: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 2.5rem 1rem; }
+      header { text-align: center; margin-bottom: 1.5rem; }
+      h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: .5rem; letter-spacing: .03em; }
+      p { opacity: .85; max-width: 640px; line-height: 1.6; margin: 0 auto; }
+      .stage { width: min(960px, 100%); border-radius: 16px; overflow: hidden; border: 1px solid rgba(79, 195, 247, .35); box-shadow: 0 20px 40px -24px rgba(0, 0, 0, .8); background: rgba(15, 22, 32, .85); padding: 1.5rem; }
+      video { width: 100%; border-radius: 12px; background: #000; }
+      .actions { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+      a.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.4rem; border-radius: 999px; font-weight: 600; font-size: .9rem; border: 1px solid #4fc3f7; color: #0c1118; background: linear-gradient(135deg, #4fc3f7, #b280ff); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+      a.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -16px rgba(79, 195, 247, .9); }
+      footer { margin-top: auto; padding-top: 2.5rem; font-size: .75rem; opacity: .6; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Team B · 탈출 월드 시연</h1>
+      <p>마인크래프트 탈출 모티프 맵을 간단히 촬영한 시연 영상입니다. 아래 플레이어에서 전체 화면으로 감상하거나 720p 이상 해상도로 전환해 주세요.</p>
+    </header>
+    <main class="stage">
+      <video controls playsinline preload="metadata" poster="../assets/teamb.png">
+        <source src="team-b.mp4" type="video/mp4" />
+        사용 중인 브라우저가 HTML5 비디오를 지원하지 않습니다. <a href="team-b.mp4">여기에서 직접 다운로드</a>하세요.
+      </video>
+      <div class="actions">
+        <a class="btn" href="../index.html">🏠 갤러리로 돌아가기</a>
+        <a class="btn" href="team-b.mp4" download>⬇️ 영상 파일 저장</a>
+      </div>
+    </main>
+    <footer>© 2025 Team B</footer>
+  </body>
+</html>
