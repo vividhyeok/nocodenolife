@@ -43,6 +43,9 @@ function main(){
   // games 폴더 복사(HTML/영상/ZIP 등)
   copyDir(path.join(root, 'games'), path.join(dist, 'games'));
 
+  // teams 폴더 복사(팀별 상세 페이지)
+  copyDir(path.join(root, 'teams'), path.join(dist, 'teams'));
+
   console.log('정적 추가 자산 복사 완료.');
 }
 

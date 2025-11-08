@@ -117,18 +117,12 @@ function navigateToProject(p){
 
 function navigateToDetail(p){
   if(!p) return;
-  const target = p.detailUrl || p.details;
-  if(!target){
-    openTeamModal(p);
-    return;
-  }
-  const isExternal = typeof target === 'string' && /^https?:\/\//i.test(target);
-  const href = typeof target === 'string' ? target : '';
+  const href = (typeof p.detailUrl === 'string' && p.detailUrl.trim()) ? p.detailUrl.trim() : null;
   if(!href){
     openTeamModal(p);
     return;
   }
-  if(isExternal){
+  if(/^https?:\/\//i.test(href)){
     window.open(href, '_blank', 'noopener');
   } else {
     window.location.href = href;
