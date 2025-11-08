@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css?v=20251108" />
+  <link rel="stylesheet" href="assets/style.css?v=20251108" />
   </head>
   <body class="theme-dark">
     <header class="navbar container">
@@ -62,7 +62,8 @@
       </article>
     </template>
 
-    <div id="modal" class="modal" hidden style="display:none" aria-hidden="true" data-init="true">
+  <!-- modal: hidden 속성 + inline style로 첫 로드(캐시 문제, UA 스타일 오버라이드)에서도 강제 비표시 -->
+  <div id="modal" class="modal" hidden style="display:none" aria-hidden="true" data-init="true">
       <div class="modal-backdrop" data-close></div>
       <div class="modal-dialog">
         <header class="modal-header">
@@ -80,6 +81,7 @@
       </div>
     </div>
 
+    <!-- team details modal -->
     <div id="team-modal" class="modal" hidden style="display:none" aria-hidden="true">
       <div class="modal-backdrop" data-close></div>
       <div class="modal-dialog">
@@ -95,7 +97,7 @@
 
     <section id="about" class="about container">
       <h2>About</h2>
-      <p>고교 연계 동아리 '노코드노라이프'의 포트폴리오용 웹사이트입니다.</p>
+  <p>고교 연계 동아리 '노코드노라이프'의 포트폴리오용 웹사이트입니다.</p>
     </section>
 
     <footer class="footer container">
