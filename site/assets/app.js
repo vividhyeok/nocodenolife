@@ -28,6 +28,7 @@ function renderCards(items){
   const tpl = document.getElementById('card-tpl');
   grid.innerHTML = '';
   grid.dataset.state='ready';
+  console.log('rendering cards', items.length);
   items.forEach(p=>{
     const node = tpl.content.cloneNode(true);
     const article = node.querySelector('.card');
@@ -45,6 +46,7 @@ function renderCards(items){
     node.querySelector('.desc').textContent = p.desc || '';
 
     const actions = node.querySelector('.actions');
+    console.log('actions element', actions);
 
     // overlay action
     const overlayBtn = node.querySelector('.action-primary');
@@ -59,6 +61,7 @@ function renderCards(items){
     const playBtn = document.createElement('button');
     playBtn.className = 'btn btn-primary';
     playBtn.textContent = (p.type==='video' || p.type==='minecraft') ? '영상 재생' : (p.type==='zip' ? '다운로드' : '바로 보기');
+    console.log('playBtn text', playBtn.textContent);
     playBtn.addEventListener('click', (e)=>{
       e.preventDefault(); openModal(p);
     });
